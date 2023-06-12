@@ -6,6 +6,11 @@ const Tooltip = styled.div`
   display: inline-block;
 
   &:hover {
+    .btn-hub {
+      background-color: #485162;
+      transition: background-color 0.3s;
+    }
+
     .btn-hub::after,
     .tooltip {
       visibility: visible;
