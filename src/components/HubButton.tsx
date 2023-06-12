@@ -55,6 +55,7 @@ const Tooltip = styled.div`
 
       label {
         cursor: pointer;
+        text-align: center;
       }
     }
   }
@@ -173,6 +174,43 @@ const Tooltip = styled.div`
           }
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .btn-hub {
+      line-height: 1em;
+
+      .btn-hub-inner {
+        gap: 8px;
+      }
+    }
+
+    .tooltip {
+      right: 262px;
+      width: 768px;
+
+      .spacer {
+        height: 3px;
+      }
+
+      .content .left svg {
+        width: 300px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .btn-hub {
+      line-height: 1.25em;
+
+      .btn-hub-inner {
+        gap: 4px;
+      }
+    }
+
+    .tooltip .spacer {
+      height: 3px;
     }
   }
 `
