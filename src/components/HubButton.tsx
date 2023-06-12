@@ -36,7 +36,7 @@ const Tooltip = styled.div`
       z-index: 2;
       border-left: 7px solid transparent;
       border-right: 7px solid transparent;
-      border-bottom: 10px solid #fff;
+      border-bottom: 10px solid ${({ theme }) => theme.contentBackgroundColor};
 
       opacity: 0;
       transition: opacity 0.3s;
@@ -94,12 +94,13 @@ const Tooltip = styled.div`
 
       .sign-up {
         display: inline-block;
-        padding: 10px 25px;
+        padding: 11px 25px 10px 25px;
         color: #03192d;
         background-color: #d5ea48;
         border-radius: 8px;
         font-size: 0.875rem;
         font-weight: 900;
+        line-height: normal;
         text-align: center;
         text-decoration: none;
         transition: background-color 0.25s linear;
@@ -128,7 +129,7 @@ const Tooltip = styled.div`
           }
 
           h3 {
-            color: #03192d;
+            color: ${({ theme }) => theme.featureHColor};
             font-size: 1rem;
             font-weight: 900;
             line-height: 22px;
@@ -136,7 +137,8 @@ const Tooltip = styled.div`
           }
 
           p {
-            color: #677581;
+            color: ${({ theme }) => theme.featurePColor};
+            line-height: 1.5;
             margin: 0;
           }
         }
@@ -145,7 +147,7 @@ const Tooltip = styled.div`
       .learn-more {
         display: block;
         margin: 0 auto;
-        color: #03192d;
+        color: ${({ theme }) => theme.learnMoreColor};
         font-size: 1rem;
         font-weight: 900;
         line-height: 22px;
