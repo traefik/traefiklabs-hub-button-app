@@ -1,27 +1,12 @@
-import Header from 'components/nav/Header'
-import React, { ReactNode, ComponentProps } from 'react'
-import { Provider } from '@containous/faency'
-import { SWRConfig } from 'swr'
-import fetcher from 'utils/fetcher'
-import DrawerGlobalStyle from 'components/nav/DrawerGlobalStyle'
-import FontGlobalStyle from 'components/nav/FontGlobalStyle'
+import HubButton from 'components/HubButton'
+import { darkTheme, lightTheme } from 'components/themes'
+import { ThemeProvider } from 'styled-components'
 
-const FaencyProvider = Provider as React.FC<ComponentProps<typeof Provider> & { children: ReactNode }>
-
-function App({ product }: { product?: string }) {
+export const App = ({ theme = 'light' }: { theme?: string }) => {
   return (
-    <SWRConfig
-      value={{
-        refreshInterval: process.env.POLLING_INTERVAL ? parseInt(process.env.POLLING_INTERVAL, 10) : 300000, // default 5min
-        fetcher,
-      }}
-    >
-      <FaencyProvider>
-        <DrawerGlobalStyle />
-        <FontGlobalStyle />
-        <Header product={product} />
-      </FaencyProvider>
-    </SWRConfig>
+    <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+      <HubButton />
+    </ThemeProvider>
   )
 }
 
