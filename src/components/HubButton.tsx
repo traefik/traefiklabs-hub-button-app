@@ -187,7 +187,7 @@ const Tooltip = styled.div`
     }
 
     .tooltip {
-      right: 262px;
+      right: 140px;
       width: 768px;
 
       .spacer {
