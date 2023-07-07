@@ -26,4 +26,4 @@ It will create a `build` folder with the compiled assets.
 ## URL
 
 https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js
-
+https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js.map
