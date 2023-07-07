@@ -28,7 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "gen-assets": "rimraf static-assets && mkdir -p static-assets && cp build/static/js/*.js static-assets/main-v1.js && sed -i '1s@.*@\/* eslint-disable *\/@' static-assets/main-v1.js",
+    "rm-static-assets": "rimraf static-assets",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
