@@ -23,7 +23,30 @@ Check the page that opens if the Header is properly rendered and if the latest p
 
 It will create a `build` folder with the compiled assets.
 
-## URL
+## How to use
 
-https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js
-https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js.map
+Put the full URL of the script file in the `src` attribute of a `<script>` tag:
+
+```html
+<script src="https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js"></script>
+```
+
+You can place the script reference in head or body tag, as you like.
+
+Then, you can use the **hub-button-app** custom element wherever you need it.
+Please notice the custom element exposes a property called **theme** to control its appearance; possible values can be
+`dark` or `light`, with light as the default value.
+
+The script (and its sourcemap) can be also embedded in another project codebase; this can be useful as a local fallback
+in case the remote source became unavailable.
+While doing this please remember to update, in both the script and its sourcemap, the following lines:
+
+| File | Line | Key |
+| - | - | - |
+| main-v1.js | 3 | `sourceMappingURL` |
+| main-v1.js.map | 1 | `file` |
+
+### Deployments URLs
+
+- https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js
+- https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js.map
