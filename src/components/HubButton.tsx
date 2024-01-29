@@ -131,26 +131,8 @@ const Tooltip = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    .btn-hub {
-      line-height: 1em;
-    }
-
     .tooltip {
       right: 16px;
-
-      .spacer {
-        height: 3px;
-      }
-    }
-  }
-
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .btn-hub {
-      line-height: 1.25em;
-    }
-
-    .tooltip .spacer {
-      height: 3px;
     }
   }
 `
