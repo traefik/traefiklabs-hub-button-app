@@ -1,4 +1,5 @@
-import CheckIcon from './CheckIcon'
+import TraefikEnterpriseIcon from './TraefikEnterpriseIcon'
 import TraefikHubIcon from './TraefikHubIcon'
+import TraefikProxyIcon from './TraefikProxyIcon'
 
-export { CheckIcon, TraefikHubIcon }
+export { TraefikEnterpriseIcon, TraefikHubIcon, TraefikProxyIcon }

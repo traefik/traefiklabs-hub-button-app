@@ -2,10 +2,10 @@ import HubButton from 'components/HubButton'
 import { darkTheme, lightTheme } from 'components/themes'
 import { ThemeProvider } from 'styled-components'
 
-export const App = ({ theme = 'light' }: { theme?: string }) => {
+export const App = ({ theme = 'light' }: { theme?: 'light' | 'dark' }) => {
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-      <HubButton />
+      <HubButton theme={theme} />
     </ThemeProvider>
   )
 }
