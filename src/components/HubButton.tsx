@@ -220,7 +220,7 @@ const products: Product[] = [
 const HubButton = ({ theme }: { theme: 'light' | 'dark' }) => {
   return (
     <Tooltip>
-      <a href="https://traefik.io/try-hub-now" target="_blank" className="btn-hub">
+      <a className="btn-hub" href="#">
         Upgrade
       </a>
       <div className="tooltip">
