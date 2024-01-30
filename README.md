@@ -37,16 +37,25 @@ Then, you can use the **hub-button-app** custom element wherever you need it.
 Please notice the custom element exposes a property called **theme** to control its appearance; possible values can be
 `dark` or `light`, with light as the default value.
 
-The script (and its sourcemap) can be also embedded in another project codebase; this can be useful as a local fallback
-in case the remote source became unavailable.
-While doing this please remember to update, in both the script and its sourcemap, the following lines:
+### Embed into another project (local fallback)
+
+The script (and its sourcemap) can be embedded in another project codebase, this can be useful as a local fallback in
+case the remote source became unavailable.
+
+To make the static assets on your computer please run `make static-assets`.
+
+Please notice that in macOS `''` must be added after `-i` in each sed command, e.g.
+`sed -i 's@something@something@' dest.file` become `sed -i '' 's@something@something@' dest.file`.
+
+When you have the static assets available please remember to update, in both the script and its sourcemap, the following
+lines:
 
 | File | Line | Key |
 | - | - | - |
 | main-v1.js | 3 | `sourceMappingURL` |
 | main-v1.js.map | 1 | `file` |
 
-### Deployments URLs
+### Deployment URLs
 
 - https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js
 - https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js.map
