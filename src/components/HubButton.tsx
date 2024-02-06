@@ -1,5 +1,5 @@
-import { CheckIcon, TraefikHubIcon } from 'components/icons'
-import { CTAImage } from 'components/images'
+import { TraefikEnterpriseIcon, TraefikHubIcon, TraefikProxyIcon } from 'components/icons'
+import { ReactNode } from 'react'
 import styled from 'styled-components'
 
 const Tooltip = styled.div`
@@ -7,7 +7,7 @@ const Tooltip = styled.div`
 
   &:hover {
     .btn-hub {
-      background-color: #485162;
+      background-color: #54b4cd;
       transition: background-color 0.3s;
     }
 
@@ -20,14 +20,14 @@ const Tooltip = styled.div`
 
   .btn-hub {
     display: inline-block;
-    padding: 9px 16px;
+    padding: 13px 12px;
 
     border-radius: 8px;
-    background-color: #222b3c;
-    color: #fff;
-    font-size: 16px;
+    background-color: #54b4cd;
+    color: #03192d;
+    font-size: 1rem;
     font-weight: 700;
-    line-height: inherit;
+    line-height: 1.38;
     text-decoration: none;
 
     position: relative;
@@ -36,27 +36,20 @@ const Tooltip = styled.div`
       content: '';
       visibility: hidden;
       position: absolute;
-      top: 88%;
-      right: calc(50% - 7px);
+      top: 87%;
+      right: calc(50% - 8px);
       z-index: 2;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-bottom: 10px solid ${({ theme }) => theme.contentBackgroundColor};
+      border-style: solid;
+      border-width: 0 8px 14px 8px;
+      border-color: transparent transparent ${({ theme }) => theme.contentBackgroundColor} transparent;
 
       opacity: 0;
       transition: opacity 0.3s;
     }
 
-    .btn-hub-inner {
-      display: flex;
-      align-items: center;
-      flex-wrap: nowrap !important;
-      gap: 8px;
-
-      label {
-        cursor: pointer;
-        text-align: center;
-      }
+    label {
+      cursor: pointer;
+      text-align: center;
     }
   }
 
@@ -68,109 +61,69 @@ const Tooltip = styled.div`
     z-index: 1;
     top: inherit;
     right: 0;
-    width: 836px;
+    width: 400px;
 
     opacity: 0;
     transition: opacity 0.3s;
     visibility: hidden;
 
     .spacer {
-      height: 5px;
+      height: 8px;
     }
 
     .content {
       display: flex;
       font-size: 16px;
-      border-radius: 16px;
+      border-radius: 8px;
       background-color: ${({ theme }) => theme.contentBackgroundColor};
       box-shadow: ${({ theme }) => theme.contentBoxShadow};
       overflow: hidden;
 
-      .left {
-        flex-shrink: 0;
-        padding: 9px 22px 40px 22px;
-        background-color: #060b21;
-        text-align: center;
+      .products {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        margin: 16px;
 
-        svg {
-          flex-shrink: 0;
-        }
-
-        p {
-          max-width: 288px;
-          margin: 13px auto 31px auto;
-          color: #f9fafa;
-          font-size: 2.25rem;
-          font-weight: 900;
-          line-height: 1.33;
-          text-align: center;
-        }
-
-        .sign-up {
-          display: inline-block;
-          padding: 11px 25px 10px 25px;
-          color: #03192d;
-          background-color: #d5ea48;
-          border-radius: 8px;
-          font-size: 0.875rem;
-          font-weight: 900;
-          line-height: normal;
-          text-align: center;
-          text-decoration: none;
-          transition: background-color 0.25s linear;
-
-          &:hover {
-            background-color: #e5f291;
-          }
-        }
-      }
-
-      .right {
-        padding: 48px 32px;
-
-        .features {
+        .product {
           display: flex;
-          flex-direction: column;
-          gap: 26px;
-          margin: 7px 5px 53px 0;
-
-          .feature {
-            display: flex;
-            gap: 16px;
-
-            svg {
-              flex-shrink: 0;
-            }
-
-            h3 {
-              color: ${({ theme }) => theme.featureHColor};
-              font-size: 1rem;
-              font-weight: 900;
-              line-height: 22px;
-              margin: 0;
-            }
-
-            p {
-              color: ${({ theme }) => theme.featurePColor};
-              line-height: 1.5;
-              margin: 0;
-            }
-          }
-        }
-
-        .learn-more {
-          display: block;
-          margin: 0 auto;
-          color: ${({ theme }) => theme.learnMoreColor};
-          font-size: 1rem;
-          font-weight: 900;
-          line-height: 22px;
-          text-align: center;
-          text-decoration: none;
-          transition: opacity 0.25s linear;
+          gap: 16px;
+          padding: 16px;
+          border-radius: 8px;
+          transition: background-color 0.3s;
 
           &:hover {
-            opacity: 0.7;
+            background-color: ${({ theme }) => theme.productBackgroundColor};
+          }
+
+          svg {
+            flex-shrink: 0;
+          }
+
+          h3 {
+            color: ${({ theme }) => theme.productNameColor};
+            font-size: 1rem;
+            font-weight: 900;
+            line-height: 22px;
+            margin: 2px 0 0 0;
+          }
+
+          p {
+            color: ${({ theme }) => theme.productDescColor};
+            line-height: 1.5;
+            margin: 0 0 10px 0;
+          }
+
+          a {
+            font-weight: 900;
+            line-height: 22px;
+            text-decoration: none;
+            transition: opacity 0.25s linear;
+
+            &:hover {
+              opacity: 0.7;
+            }
           }
         }
       }
@@ -178,106 +131,122 @@ const Tooltip = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    .btn-hub {
-      line-height: 1em;
-
-      .btn-hub-inner {
-        gap: 8px;
-      }
-    }
-
     .tooltip {
-      right: 140px;
-      width: 768px;
-
-      .spacer {
-        height: 3px;
-      }
-
-      .content .left svg {
-        width: 300px;
-      }
-    }
-  }
-
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .btn-hub {
-      line-height: 1.25em;
-
-      .btn-hub-inner {
-        gap: 4px;
-      }
-    }
-
-    .tooltip .spacer {
-      height: 3px;
+      right: 16px;
     }
   }
 `
 
-const features = [
+type Product = {
+  icon: {
+    color: {
+      dark: string
+      light: string
+    }
+    el: ReactNode
+  }
+  name: string
+  desc: string
+  link: {
+    color: {
+      dark: string
+      light: string
+    }
+    href: string
+    text: string
+  }
+}
+
+const products: Product[] = [
   {
-    h: 'K8s-native API Management',
-    p: 'K8s services auto-discovery, 100% CRDs configuration, full GitOps compliance.',
+    icon: {
+      color: {
+        dark: '#2aa2c1',
+        light: '#21819a',
+      },
+      el: <TraefikProxyIcon />,
+    },
+    name: 'Traefik Proxy',
+    desc: 'OSS Cloud-Native Application Proxy',
+    link: {
+      color: {
+        dark: '#2aa2c1',
+        light: '#21819a',
+      },
+      text: 'Get Commercial Support',
+      href: 'https://traefik.io/get-traefik-commercial-support/',
+    },
   },
   {
-    h: 'Central Control Plane',
-    p: 'A simple management point for all APIs, users and infrastructure components.',
+    icon: {
+      color: {
+        dark: '#337fe6',
+        light: '#337fe6',
+      },
+      el: <TraefikEnterpriseIcon />,
+    },
+    name: 'Traefik Enterprise',
+    desc: 'Enterprise-Grade API Gateway',
+    link: {
+      color: {
+        dark: '#337fe6',
+        light: '#337fe6',
+      },
+      text: 'Learn more',
+      href: 'https://traefik.io/explore-traefik-enterprise/',
+    },
   },
   {
-    h: 'Self-serve API Portal',
-    p: 'API discovery, documentation, testing, and access control.',
+    icon: {
+      color: {
+        dark: '#d5ea48',
+        light: '#7f8c2b',
+      },
+      el: <TraefikHubIcon />,
+    },
+    name: 'Traefik Hub',
+    desc: 'GitOps-Driven API Management',
+    link: {
+      color: {
+        dark: '#d5ea48',
+        light: '#555d1c',
+      },
+      text: 'Learn more',
+      href: 'https://traefik.io/explore-traefik-hub/',
+    },
   },
 ]
 
-const HubButton = () => {
+const HubButton = ({ theme }: { theme: 'light' | 'dark' }) => {
   return (
     <Tooltip>
-      <a href="https://traefik.io/try-hub-now" target="_blank" className="btn-hub">
-        <div className="btn-hub-inner">
-          <TraefikHubIcon />
-          <label>Traefik Hub</label>
-        </div>
+      <a className="btn-hub" href="#">
+        Upgrade
       </a>
       <div className="tooltip">
         <div className="spacer">
           <span></span>
         </div>
         <div className="content">
-          <div className="left">
-            <CTAImage />
-            <p>Your APIs deserve better</p>
-            <a
-              className="sign-up"
-              href="https://traefik.io/try-hub-now"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="TRY TRAEFIK HUB"
-            >
-              TRY TRAEFIK HUB
-            </a>
-          </div>
-          <div className="right">
-            <div className="features">
-              {features.map((feature, index) => (
-                <div className="feature" key={index}>
-                  <CheckIcon />
-                  <div>
-                    <h3>{feature.h}</h3>
-                    <p>{feature.p}</p>
-                  </div>
+          <div className="products">
+            {products.map((product, index) => (
+              <div className="product" key={index}>
+                <div style={{ color: product.icon.color[theme] }}>{product.icon.el}</div>
+                <div>
+                  <h3>{product.name}</h3>
+                  <p>{product.desc}</p>
+                  <a
+                    href={product.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={product.link.text}
+                    style={{ color: product.link.color[theme] }}
+                  >
+                    {product.link.text} →
+                  </a>
                 </div>
-              ))}
-            </div>
-            <a
-              className="learn-more"
-              href="https://traefik.io/explore-traefik-hub"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Learn more about Traefik Hub"
-            >
-              Learn more about Traefik Hub →
-            </a>
+              </div>
+            ))}
           </div>
         </div>
       </div>
