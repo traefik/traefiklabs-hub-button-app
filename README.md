@@ -34,8 +34,6 @@ Put the full URL of the script file in the `src` attribute of a `<script>` tag:
 You can place the script reference in head or body tag, as you like.
 
 Then, you can use the **hub-button-app** custom element wherever you need it.
-Please notice the custom element exposes a property called **theme** to control its appearance; possible values can be
-`dark` or `light`, with light as the default value.
 
 ### Embed into another project (local fallback)
 
