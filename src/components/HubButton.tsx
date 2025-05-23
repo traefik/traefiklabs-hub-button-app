@@ -1,17 +1,23 @@
 import styled from 'styled-components'
 
+const parseInlineStyle = (style: string) => {
+  const template = document.createElement('template')
+  template.setAttribute('style', style)
+  return Object.entries(template.style)
+    .filter(([key]) => !/^[0-9]+$/.test(key))
+    .filter(([, value]) => Boolean(value))
+    .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {})
+}
+
 const StyledButton = styled.a`
   display: inline-block;
   padding: 13px 12px;
-
   border-radius: 8px;
-  background-color: #54b4cd;
-  color: #03192d;
   font-size: 1rem;
   font-weight: 700;
-  line-height: 1.38;
   text-decoration: none;
-
+  background-color: #54b4cd;
+  color: #ffffff;
   position: relative;
 
   label {
@@ -20,14 +26,17 @@ const StyledButton = styled.a`
   }
 
   &:hover {
-    background-color: #7fc7d9;
-    transition: background-color 0.1s;
+    filter: brightness(110%);
   }
 `
 
-const HubButton = () => {
+const HubButton = ({ style }: { style?: string }) => {
   return (
-    <StyledButton href="https://traefik.io/upgrade-traefik" target="_blank">
+    <StyledButton
+      href="https://traefik.io/upgrade-traefik"
+      target="_blank"
+      style={style ? parseInlineStyle(style) : {}}
+    >
       Upgrade
     </StyledButton>
   )
