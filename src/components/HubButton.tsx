@@ -3,13 +3,9 @@ import styled from 'styled-components'
 const StyledButton = styled.a`
   display: inline-block;
   padding: 13px 12px;
-
   border-radius: 8px;
-  background-color: #54b4cd;
-  color: #03192d;
   font-size: 1rem;
   font-weight: 700;
-  line-height: 1.38;
   text-decoration: none;
 
   position: relative;
@@ -20,14 +16,13 @@ const StyledButton = styled.a`
   }
 
   &:hover {
-    background-color: #7fc7d9;
-    transition: background-color 0.1s;
+    filter: brightness(110%);
   }
 `
 
-const HubButton = () => {
+const HubButton = ({ background = '#54b4cd', color = '#ffffff' }: { background: string; color: string }) => {
   return (
-    <StyledButton href="https://traefik.io/upgrade-traefik" target="_blank">
+    <StyledButton href="https://traefik.io/upgrade-traefik" target="_blank" style={{ background, color }}>
       Upgrade
     </StyledButton>
   )

@@ -1,6 +1,6 @@
 # Traefik Hub Button with WebComponents
 
-This Project aims to solve the issue to have a Hub buttonin the Traefik dashboard.
+This Project aims to solve the issue to have a Hub button in the Traefik dashboard.
 
 WebComponents are a way to define a custom component that runs as any other HTML component, so it can be used in any framework or even in pure HTML files, after importing the JS file with the component definition.
 
