@@ -1,7 +1,7 @@
 import HubButton from 'components/HubButton'
 
-export const App = ({ background = '#54b4cd', color = '#ffffff' }: { background?: string; color?: string }) => {
-  return <HubButton background={background} color={color} />
+export const App = ({ style }: { style?: string }) => {
+  return <HubButton style={style} />
 }
 
 export default App
