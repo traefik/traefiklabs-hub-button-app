@@ -9,27 +9,21 @@ const parseInlineStyle = (style: string) => {
     .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {})
 }
 
-const StyledWrapper = styled.div`
+const StyledButton = styled.a`
   display: flex;
   align-items: center;
   height: 44px;
   padding: 0 12px;
   background-color: #54b4cd;
   border-radius: 8px;
-`
-
-const StyledButton = styled.a`
-  display: inline-block;
-  margin-bottom: 1px;
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   color: #ffffff;
   position: relative;
 
-  label {
-    cursor: pointer;
-    text-align: center;
+  span {
+    margin-bottom: 1px;
   }
 
   &:hover {
@@ -39,11 +33,13 @@ const StyledButton = styled.a`
 
 const HubButton = ({ style }: { style?: string }) => {
   return (
-    <StyledWrapper style={style ? parseInlineStyle(style) : {}}>
-      <StyledButton href="https://traefik.io/upgrade-traefik" target="_blank">
-        Upgrade
-      </StyledButton>
-    </StyledWrapper>
+    <StyledButton
+      href="https://traefik.io/upgrade-traefik"
+      target="_blank"
+      style={style ? parseInlineStyle(style) : {}}
+    >
+      <span>Upgrade</span>
+    </StyledButton>
   )
 }
 
