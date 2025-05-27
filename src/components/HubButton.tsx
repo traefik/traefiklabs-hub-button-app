@@ -39,12 +39,8 @@ const StyledButton = styled.a`
 
 const HubButton = ({ style }: { style?: string }) => {
   return (
-    <StyledWrapper>
-      <StyledButton
-        href="https://traefik.io/upgrade-traefik"
-        target="_blank"
-        style={style ? parseInlineStyle(style) : {}}
-      >
+    <StyledWrapper style={style ? parseInlineStyle(style) : {}}>
+      <StyledButton href="https://traefik.io/upgrade-traefik" target="_blank">
         Upgrade
       </StyledButton>
     </StyledWrapper>
