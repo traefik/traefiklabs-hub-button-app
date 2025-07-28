@@ -28,6 +28,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "format": "prettier './src/**/*.{ts,tsx}' --config .prettierrc.json --write",
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
