@@ -17,6 +17,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
+      - name: Enable corepack
+        run: corepack enable
+
       - name: Install dependencies
         run: make deps
 
@@ -25,4 +28,3 @@ jobs:
 
       - name: Generate assets
         run: make static-assets
-
