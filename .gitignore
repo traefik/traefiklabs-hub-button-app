@@ -26,3 +26,12 @@ yarn-error.log*
 
 
 .idea/
+
+# yarn berry with no zero-installs
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
