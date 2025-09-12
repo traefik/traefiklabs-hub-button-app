@@ -48,10 +48,10 @@ Please notice that in macOS `''` must be added after `-i` in each sed command, e
 When you have the static assets available please remember to update, in both the script and its sourcemap, the following
 lines:
 
-| File | Line | Key |
-| - | - | - |
-| main-v1.js | 3 | `sourceMappingURL` |
-| main-v1.js.map | 1 | `file` |
+| File | Line | Key | Value (example) |
+| - | - | - | - |
+| main-v1.js | 23 | `sourceMappingURL` | `/traefiklabs-hub-button-app/main-v1.js.map` |
+| main-v1.js.map | 1 | `file` | `/traefiklabs-hub-button-app/main-v1.js` |
 
 ### Deployment URLs
 
