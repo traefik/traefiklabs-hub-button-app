@@ -38,7 +38,7 @@ const HubButton = ({ style }: { style?: string }) => {
       target="_blank"
       style={style ? parseInlineStyle(style) : {}}
     >
-      <span>Upgrade</span>
+      <span>Upgrade to Traefik Hub</span>
     </StyledButton>
   )
 }
