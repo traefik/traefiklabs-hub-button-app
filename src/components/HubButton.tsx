@@ -34,7 +34,7 @@ const TooltipContent = styled.div<{ $side: 'top' | 'bottom'; $align: 'left' | 'c
   border-radius: 6px;
   opacity: 0;
   visibility: hidden;
-  width: 250px;
+  width: 260px;
   transition:
     opacity 0.3s,
     visibility 0.3s;
