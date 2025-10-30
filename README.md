@@ -21,7 +21,9 @@ Check the page that opens if the Header is properly rendered and if the latest p
 - `yarn install`
 - `yarn build`
 
-It will create a `build` folder with the compiled assets.
+It will create a `dist` folder with the compiled assets.
+
+**Note**: You will need a `PRIVATE_KEY` env variable to complete the build process. You can find the value on Bitwarden.
 
 ## How to use
 
@@ -56,4 +58,5 @@ lines:
 ### Deployment URLs
 
 - https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js
+- https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js.sig
 - https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js.map

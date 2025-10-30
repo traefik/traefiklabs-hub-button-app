@@ -22,14 +22,10 @@ jobs:
       - name: Enable corepack
         run: corepack enable
 
-      - name: Install dependencies
-        run: make deps
-
-      - name: Build
-        run: make build
-
       - name: Generate assets
         run: make static-assets
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
 
       # https://github.com/marketplace/actions/github-pages
       - name: Deploy to GitHub Pages
