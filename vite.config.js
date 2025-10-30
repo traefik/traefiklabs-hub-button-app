@@ -46,8 +46,8 @@ export default ({ mode }) => {
 
             // Update sourcemap URL to GitHub Pages URL
             modifiedCode = modifiedCode.replace(
-              /\/\/# sourceMappingURL=([^.]+\.umd\.js\.map)/g,
-              '//# sourceMappingURL=https://traefik.github.io/traefiklabs-hub-button-app/main-v1.umd.js.map',
+              /\/\/# sourceMappingURL=([^.]+\.js\.map)/g,
+              '//# sourceMappingURL=https://traefik.github.io/traefiklabs-hub-button-app/main-v1.js.map',
             )
 
             file.code = modifiedCode
@@ -94,7 +94,7 @@ export default ({ mode }) => {
         entry: './src/index.tsx',
         name: 'hub-button-app',
         formats: ['umd'],
-        fileName: (format) => `hub-button-app.${format}.js`,
+        fileName: () => `hub-button-app.js`,
       },
       sourcemap: true,
       target: 'esnext',
