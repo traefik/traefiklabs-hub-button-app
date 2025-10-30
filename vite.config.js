@@ -42,7 +42,7 @@ export default ({ mode }) => {
             // Update sourcemap URL to GitHub Pages URL
             modifiedCode = modifiedCode.replace(
               /\/\/# sourceMappingURL=([^.]+\.umd\.js\.map)/g,
-              '//# sourceMappingURL=https://traefik.github.io/traefiklabs-hub-button-app/$1',
+              '//# sourceMappingURL=https://traefik.github.io/traefiklabs-hub-button-app/main-v1.umd.js.map',
             )
 
             file.code = modifiedCode
@@ -93,7 +93,6 @@ export default ({ mode }) => {
       },
       sourcemap: true,
       target: 'esnext',
-      assetsInlineLimit: 1000000,
     },
     server: {
       open: true,

@@ -21,7 +21,7 @@ Check the page that opens if the Header is properly rendered and if the latest p
 - `yarn install`
 - `yarn build`
 
-It will create a `build` folder with the compiled assets.
+It will create a `dist` folder with the compiled assets.
 
 ## How to use
 

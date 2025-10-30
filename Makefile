@@ -13,8 +13,7 @@ clean:
 	mkdir -p static-assets
 
 static-assets: build
-	cp build/static/js/*.js static-assets/main-v1.js
-	sed -i '1s@.*@\/* eslint-disable *\/@' static-assets/main-v1.js
-	sed -i '23s@.*@\/\/# sourceMappingURL=https:\/\/traefik.github.io\/traefiklabs-hub-button-app\/main-v1.js.map@' static-assets/main-v1.js
-	cp build/static/js/*.js.map static-assets/main-v1.js.map
-	sed -i -E '1s@static\/js\/main.[0-9a-zA-Z]{8}.js@https:\/\/traefik.github.io\/traefiklabs-hub-button-app\/main-v1.js@' static-assets/main-v1.js.map
+	cp dist/hub-button-app.umd.js static-assets/main-v1.umd.js
+	cp dist/hub-button-app.umd.js.sig static-assets/main-v1.umd.js.sig
+	cp dist/hub-button-app.umd.js.map static-assets/main-v1.umd.js.map
+	sed -i -E '1s@hub-button-app.umd.js@https:\/\/traefik.github.io\/traefiklabs-hub-button-app\/main-v1.umd.js@' static-assets/main-v1.umd.js.map
