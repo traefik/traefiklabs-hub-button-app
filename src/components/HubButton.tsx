@@ -79,9 +79,11 @@ const TooltipContent = styled.div<{ $side: 'top' | 'bottom'; $align: 'left' | 'c
       $side === 'top'
         ? `
       top: 100%;
+      border-color: #363b56 transparent transparent transparent;
     `
         : `
       bottom: 100%;
+      border-color: transparent transparent #363b56 transparent;
     `}
 
     ${({ $align }) => {
