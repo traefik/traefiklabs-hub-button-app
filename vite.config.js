@@ -14,8 +14,13 @@ export default ({ mode }) => {
     name: 'sign-bundle',
     writeBundle: async (options, bundle) => {
       const privateKeyB64 = env.PRIVATE_KEY
+      const isPR = env.IS_PR === 'true' || process.env.IS_PR === 'true'
+
       if (!privateKeyB64) {
-        // cancel build process if there is no private key
+        if (isPR) {
+          console.warn('⚠️  PR build - skipping bundle signing')
+          return
+        }
         throw new Error('❌ PRIVATE_KEY environment variable is required for bundle signing')
       }
 
