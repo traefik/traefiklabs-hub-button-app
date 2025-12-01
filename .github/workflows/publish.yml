@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  SAFE_CHAIN_MINIMUM_PACKAGE_AGE_HOURS: 360  # 15 days
+
 jobs:
 
   doc:
@@ -13,14 +16,20 @@ jobs:
 
     steps:
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
 
       - name: Enable corepack
         run: corepack enable
+
+      - name: Setup safe-chain
+        shell: bash
+        run: |
+          npm i -g @aikidosec/safe-chain
+          safe-chain setup-ci
 
       - name: Generate assets
         run: make static-assets
