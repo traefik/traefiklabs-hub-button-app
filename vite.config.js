@@ -8,7 +8,7 @@ import viteTsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vite.dev/config/
 export default ({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '')
+  const env = loadEnv(mode, process.cwd(), ['PRIVATE_KEY', 'IS_PR'])
 
   const signBundle = () => ({
     name: 'sign-bundle',
